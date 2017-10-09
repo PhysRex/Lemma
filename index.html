@@ -6,13 +6,13 @@
 
     <meta name="author" content="Mauricio Campuzano">
     <meta name="description" content="A classic game remade for the web!">
-    <link rel="shortcut icon" href="./_img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="manifest" href="./manifest.json">
 
-    <link href="./_css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="./_css/bootstrap.min.css">
+    <link href="./css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
   </head>
 
   <body>
@@ -88,31 +88,29 @@
 
     <div class="container-fluid section">
 
-      <div class="row  splash">
-        <div class="col text-center">
-          <div class="col header">
+      <div class="row splash">
+        <div class="col-xs-12 text-center">
+          <div class="header">
             <img src="#" alt="Lemma!"> Lemma
           </div>
         </div>
         <div class="row text-center">
-          <div class="col start">
+          <div class="col-xs-12 start">
             <button type="" id="start" class="btn btn-default colors" onclick="start()">START!</button>
           </div>
         </div>
         <div class="row text-center">
-          <div class="col menu-div">
-            <button type="" id="btn-menu" class="btn btn-default" onclick="menu()">Settings</button>
-          
+          <div class="col-xs-12 menu-div">
+            <button type="" id="btn-menu" class="btn btn-default" onclick="menuShowHide()">Settings</button>          
           </div>
         </div>
       </div>
 
       <div class="row hide text-center game">
-        <div class="col text-center">
+        <div class="col-xs-12 text-center">
           <div class="col header">
             <!-- Trigger/Open The Score Modal -->
             <button class="btn btn-primary" id="modalBtn" onclick="modal()"><b>||</b> SCORE
-              <!--<span class="badge">SCORE</span>-->
             </button>
             <img src="#" alt="Lemma!"> Lemma
           <button class="btn btn-default btn-exit" onclick="startReturn()">&times;</button>
@@ -142,7 +140,7 @@
         <div class="col text-center">
           <div class="col header">
             <img src="#" alt="Lemma!"> Lemma
-            <button class="btn btn-default btn-exit" onclick="menuExit()">&times;</button>
+            <button class="btn btn-default btn-exit" onclick="menuReset()">&times;</button>
           </div>
         </div>
 
@@ -173,7 +171,7 @@
                   <select class="drop-menu category">
                     <option value="classic" selected disabled>Categories:</option>
                     <option value="classic">Classic</option>
-                    <option value="verrbs">Verbs</option>
+                    <option value="verbs">Verbs</option>
                     <option value="books">Books</option>
                     <option value="countries">Places: Countries</option>
                     <option value="cities">Places: Cities</option>
@@ -191,14 +189,14 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <button class="btn btn-default" id="save-menu-btn" onclick="menu()">Save &amp; Exit</button>
+              <button class="btn btn-default" id="save-menu-btn" onclick="menuShowHide()">Save &amp; Exit</button>
             </div>
           </div>
         </div>
       </div>
 
     </div>
-
+    <audio class="audioTest" src=""></audio>
 
   
     <!-- jQuery library -->
