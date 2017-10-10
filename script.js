@@ -497,3 +497,20 @@ var phrases = {
 }
 
 
+screen.orientation.lock('landscape');
+
+function orientationDetect() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  const section = document.getElementsByClassName("section");
+  const rotate = document.getElementsByClassName("rotate-div");
+
+  if (width < height) {
+    // need to rotate screen
+    section.classList.add("hide");
+    rotate.classList.toggle("hide");
+  } else {}
+  
+  screen.orientation.lock('landscape');
+  
+}
