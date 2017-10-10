@@ -10,6 +10,26 @@
 
 
 /*///////////////////////////////////////////////////////////
+////   FORCE LANDSCAPE   //////////////////////////////////*/
+
+#rotate>* {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.landscape {
+  /* height: 50vh; */
+  padding-top: 25vh;
+  color: #000;
+  font-size: 8vh;
+  font-family: 'Baloo Bhaina', cursive;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+}
+
+
+
+/*///////////////////////////////////////////////////////////
 ////   section   //////////////////////////////////////////*/
 
 body {

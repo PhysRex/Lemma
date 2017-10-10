@@ -497,20 +497,42 @@ var phrases = {
 }
 
 
-screen.orientation.lock('landscape');
+// screen.orientation.lock('landscape');
 
 function orientationDetect() {
+  console.log("screen.orientation", screen.orientation);
   const width = window.innerWidth;
   const height = window.innerHeight;
-  const section = document.getElementsByClassName("section");
-  const rotate = document.getElementsByClassName("rotate-div");
+  var section = document.getElementById("section");
+  var rotate = document.getElementById("rotate");
 
   if (width < height) {
     // need to rotate screen
-    section.classList.add("hide");
+    section.classList.toggle("hide");
     rotate.classList.toggle("hide");
   } else {}
   
   screen.orientation.lock('landscape');
   
 }
+
+window.addEventListener("orientationchange", function() {
+  var section = document.getElementById("section");
+  var rotate = document.getElementById("rotate");
+  if (screen.orientation.type === "portrait-primary") {
+    // landscape mode
+    section.classList.add("hide");
+    rotate.classList.remove("hide");
+  } else {
+    // portrait mode
+    section.classList.remove("hide");
+    rotate.classList.add("hide");
+  }
+});
+
+
+if (screen.orientation.type === "portrait-primary") {
+  // landscape mode
+  section.classList.add("hide");
+  rotate.classList.remove("hide");
+} 
