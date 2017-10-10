@@ -6,7 +6,7 @@
 
     <meta name="author" content="Mauricio Campuzano">
     <meta name="description" content="A classic game remade for the web!">
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img class="logo" /favicon.ico" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="manifest" href="./manifest.json">
@@ -77,7 +77,7 @@
         </div>
 
         <div class="row text-center">
-          <div class="col continue">
+          <div class="col-xs-12 continue">
             Click outside modal to continue
           </div>
         </div>
@@ -86,67 +86,69 @@
 
     </div>
 
-    <div class="container-fluid section">
+    <div class="container section text-center">
 
-      <div class="row splash">
-        <div class="col-xs-12 text-center">
+      <div class="row titlebar">
+        <div class="col-xs-12 col-md-offset-2 col-md-8 text-center">
           <div class="header">
-            <img src="#" alt="Lemma!"> Lemma
+            <!-- Trigger/Open The Score Modal -->
+            <button class="btn btn-primary hide" id="modalBtn" onclick="modal()"><b>||</b> SCORE</button>
+            <img class="logo"  src="#" alt="Lemma!"> Lemma
+            <button class="btn btn-default hide btn-exit" id="menu-to-exitBtn" onclick="menuReset()">&times;</button>
+            <button class="btn btn-default hide btn-exit" id="game-to-exitBtn" onclick="startReturn()">&times;</button>
           </div>
         </div>
-        <div class="row text-center">
-          <div class="col-xs-12 start">
-            <button type="" id="start" class="btn btn-default colors" onclick="start()">START!</button>
+      </div>
+
+      <div class="row  splash">
+        <div class="col-xs-12">
+          <div class="row text-center">
+            <div class="col-xs-12 start">
+              <button type="" id="start" class="btn btn-default colors" onclick="start()">START!</button>
+            </div>
           </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-xs-12 menu-div">
-            <button type="" id="btn-menu" class="btn btn-default" onclick="menuShowHide()">Settings</button>          
+          <div class="row text-center">
+            <div class="col-xs-12 menu-div">
+              <button type="" id="btn-menu" class="btn btn-default" onclick="menuShowHide()">Settings</button>          
+            </div>
           </div>
         </div>
       </div>
 
       <div class="row hide text-center game">
-        <div class="col-xs-12 text-center">
-          <div class="col header">
-            <!-- Trigger/Open The Score Modal -->
-            <button class="btn btn-primary" id="modalBtn" onclick="modal()"><b>||</b> SCORE
-            </button>
-            <img src="#" alt="Lemma!"> Lemma
-          <button class="btn btn-default btn-exit" onclick="startReturn()">&times;</button>
-          </div>
-        </div>  
-        <div class="col-xs-9">
+        <div class="col-xs-12 col-md-offset-2 col-md-8 text-center">
+          
           <div class="row">
-            <div class="col lemma">
-              lemma 
+            <div class="col-xs-9">
+              <div class="row">
+                <div class="lemma">
+                  lemma lemma lemma lemma lemma lemma lemma lemma lemma lemma lemma lemma lemma lemma 
+                </div>
+              </div>
+              <div class="row">
+                <div class="timer">
+                  0:00
+                </div>
+              </div>
+            </div>            
+            <div class="col-xs-3">
+              <div class="row">
+                <div class="btn-next" onclick="next()">
+                  Next
+                </div>
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col timer">
-              0:00
-            </div>
-          </div>
+
         </div>
-        <div class="col-xs-3">
-          <button class="btn btn-default btn-next" onclick="next()">
-            Next
-          </button>
-        </div>
+
       </div>
 
       <div class="row hide text-center settings">
         <!--ADD SETTINGS ELEMENTS-->
-        <div class="col text-center">
-          <div class="col header">
-            <img src="#" alt="Lemma!"> Lemma
-            <button class="btn btn-default btn-exit" onclick="menuReset()">&times;</button>
-          </div>
-        </div>
-
         <div class="container">
           <div class="row">
-            <div class="col menu">
+            <div class="col-xs-12 col-md-offset-2 col-md-8 menu">
               <form class="form-inline text-right">
                 <div class="form-group slider">
                   <label class="slider-label" for="time">Minutes per Round</label>
@@ -167,7 +169,7 @@
               </form>
               
               <div class="row">
-                <div class="col drop">
+                <div class=" col-xs-offset-1 col-xs-10 text-centerdrop">
                   <select class="drop-menu category">
                     <option value="classic" selected disabled>Categories:</option>
                     <option value="classic">Classic</option>
@@ -196,7 +198,6 @@
       </div>
 
     </div>
-    <audio class="audioTest" src=""></audio>
 
   
     <!-- jQuery library -->

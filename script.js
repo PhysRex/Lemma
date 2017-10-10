@@ -3,15 +3,22 @@
 var intervalID, soundID;
 var i=0, j=0, k=0;
 // console.log("k:", k);
-var timeInterval = 100; // in milliseconds
+var timeInterval = 1000; // in milliseconds
 
-
-function start() {
+function startShowHide() {
   var splash = document.querySelector(".splash");
-  var game = document.querySelector(".game");
+  var game = document.querySelector(".game");  
   splash.classList.toggle("hide");
   game.classList.toggle("hide");
+  
+  var startExitBtn = document.querySelector("#game-to-exitBtn");  
+  var modalBtn = document.querySelector("#modalBtn");  
+  modalBtn.classList.toggle("hide");  
+  startExitBtn.classList.toggle("hide");
+}
 
+function start() {
+  startShowHide();
   reset();
 }
 
@@ -43,13 +50,11 @@ function reset() {
   totalTime = timeInFunc();  // sets value from settings menu
   next(); // shows next phrase
 
-  // play sound
-  plays(totalTime);
-
   var timerElem = document.querySelector(".timer");
   timerElem.innerHTML = totalTime() + ":00"; // FIXME: why not call "timeInFunc() directly???"
 
-  // Starts timer
+  // Starts timer &  play sound
+  plays(totalTime);
   intervalID = setInterval(timer, timeInterval);
 }
 
@@ -184,6 +189,9 @@ function menuShowHide() {
   var settings = document.querySelector(".settings");
   splash.classList.toggle("hide");
   settings.classList.toggle("hide");
+  
+  var menuExitBtn = document.querySelector("#menu-to-exitBtn");
+  menuExitBtn.classList.toggle("hide");
 }
 
 function menuReset() {
@@ -192,10 +200,7 @@ function menuReset() {
 }
 
 function startReturn() {  
-  var splash = document.querySelector(".splash");
-  var game = document.querySelector(".game");
-  splash.classList.toggle("hide");
-  game.classList.toggle("hide");
+  startShowHide()
 
   // reset timer and clear interval 
   stopAll();
